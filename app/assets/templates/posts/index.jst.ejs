@@ -2,6 +2,9 @@
 
   <% posts.forEach(function(post){ %>
   <%=  post.escape('front') %>
-  <% }) %>
+  <% if (post.escape('front_img') !== ""){ %>
+  <img src= <%= post.escape('front_img') %> />
+
+  <% }}) %>
 
   <div class="new-form"></div>

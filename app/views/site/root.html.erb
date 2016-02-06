@@ -1,3 +1,5 @@
+
+<%= filepicker_js_include_tag %>
 <h1>DreamCatcher<h1>
   <!-- can do erb with @user here-->
   <header class="current_user">
@@ -14,5 +16,6 @@
 <script type="text/javascript">
   $(document).ready(function() {
     DreamCatcher.initialize();
+    filepicker.setKey("<%= ENV['FILEPICKER_KEY'] %>")
   });
 </script>

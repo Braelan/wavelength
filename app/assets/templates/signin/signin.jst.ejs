@@ -1,7 +1,10 @@
 <% var name = current_user.escape('name') %>
 <% if (name !== 'undefined') { %>
 <%= name %>
-<% } %>
+<% if (current_user.escape('image') !== "") { %>
+   <img src= <%= current_user.escape('image') %> />
+<% }} %>
+
 <a href="/auth/twitter">Sign in with Twitter</a>
 <form class="sign-up-form" >
   sign up (now in signin.jst.ejs)

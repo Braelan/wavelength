@@ -5,5 +5,12 @@ from form.jst.ejs
   <input type="textarea" name="post[front]" value="<%= post.escape('front') %>">
   back
   <input type="textarea" name="post[back]" value="<%= post.escape('back') %>">
+
   <input type="submit">
+</form>
+
+<form class="upload" action="index.html" method="post">
+
+<input class="upload" type="filepicker" accept="">
+<input class ="upload" type="submit" name="post[front_img]" value="">
 </form>

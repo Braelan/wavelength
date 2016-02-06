@@ -35,6 +35,8 @@ gem 'figaro'
 
 gem 'omniauth-twitter'
 
+gem 'filepicker-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

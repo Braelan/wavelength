@@ -21,6 +21,6 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params
-      params.require(:post).permit(:front, :back)
+      params.require(:post).permit(:front, :back, :front_img)
   end
 end

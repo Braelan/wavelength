@@ -2,7 +2,8 @@ DreamCatcher.Views.PostForm = Backbone.View.extend({
   template: JST['posts/form'],
 
   events: {
-    "submit .new-post" : "submit"
+    "submit .new-post" : "submit",
+    "submit .upload" : "upload"
   },
 
   initialize: function(options) {
@@ -31,6 +32,15 @@ DreamCatcher.Views.PostForm = Backbone.View.extend({
           }
         }
     )
+  },
+
+  upload: function(event) {
+    event.preventDefault()
+    var that = this;
+    filepicker.pick(function(blob){
+      that.post.set({front_img: blob.url})
+    })
+
   }
 
 

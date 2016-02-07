@@ -1,5 +1,5 @@
 <% var name = current_user.escape('name') %>
-
+<% var user_id = current_user.escape('id') %>
 
 <div class="header">
 
@@ -10,8 +10,8 @@
   <li class="dream">dreamcatcher</li>
   <li><img class="logo" src="dreamcatcher.png" alt="" /></li>
   <% if (name !== 'undefined') { %>
-  <%= name %>
-  <li><a  href="create.html"><%= name %></a>
+
+  <li><a  href= <%="users/" + user_id %> ><%= name %></a>
   <% if (current_user.escape('image') !== "") { %>
      <img class="logo" src= <%= current_user.escape('image') %> />
   <% }} %>

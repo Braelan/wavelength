@@ -9,7 +9,7 @@ DreamCatcher.Views.PostForm = Backbone.View.extend({
   initialize: function(options) {
     this.collection = options.collection;
      this.post = new DreamCatcher.Models.Post();
-     this.listenTo(this.collection, 'sync', this.render)
+    //  this.listenTo(this.collection, 'sync', this.render)
   },
 
   render: function() {

@@ -1,10 +1,10 @@
 
 <%= filepicker_js_include_tag %>
-<h1>DreamCatcher<h1>
-  <!-- can do erb with @user here-->
-  <header class="current_user">
 
-  </header>
+  <!-- can do erb with @user here-->
+  <name class="current_user">
+
+  </name>
 
 
 
@@ -12,10 +12,17 @@
 
 </div>
 
-
+<script>
+  filepicker.setKey("<%= ENV['FILEPICKER_KEY'] %>");
+</script>
 <script type="text/javascript">
   $(document).ready(function() {
     DreamCatcher.initialize();
+    //
+    // probably do not need duplicate
     filepicker.setKey("<%= ENV['FILEPICKER_KEY'] %>")
+
+
+
   });
 </script>

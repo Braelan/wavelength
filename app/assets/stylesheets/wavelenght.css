@@ -1,0 +1,173 @@
+@import "header.css";
+@import "meta.css";
+
+.check{
+  background: yellow;
+}
+.rain {
+  background: #E8F3F8}
+.sky{
+  background: #DBE6EC
+  }
+.coral {
+  background: #C2CBCE
+}
+
+.jet {
+  background: #A4BCC2
+}
+
+.ocean {
+  background: #81A8B8
+}
+
+html, li, ul, div, img, input, button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: 0;
+  font: inherit;
+  text-decoration: inherit;
+  text-align  : inherit;
+  list-style: none;
+  list-style-type: none;
+  color: inherit;
+  background: transparent;
+  background: transparent;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+button {
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: block;
+  width: 50px;
+  margin: 0 auto 20px auto;
+  background: #24A8DE;
+  box-shadow: 0 3px 1px #074C99;
+  font-weight: bold;
+
+}
+
+button:active {
+
+  transform: translate(0, 5px);
+  box-shadow: 0 0 0 0;
+
+}
+
+section {
+   display: block;
+   position:static;
+   width: 170px;
+   height: 170px;
+   background: red;
+
+}
+
+.upload{
+  border: 1px solid red;
+}
+.card {
+  position: relative;
+  cursor: pointer;
+  margin: auto;
+
+}
+
+.front {
+  position: absolute;
+  background: #81A8B8;
+  width: 170px;
+  height: 170px;
+    overflow-y: hidden;
+}
+
+
+
+img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+
+.back {
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+  display: flex;
+  flex-flow:column;
+  justify-content: center;
+}
+
+.backtext {
+  padding: 0 5px 0 5px;
+  text-align: center;
+}
+
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+
+}
+
+.back {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(180deg);
+  display: flex;
+}
+
+p {
+  top: 40px;
+  margin: auto;
+  background: transparent;
+}
+
+.card.effect_hover:hover .front {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.card.effect_hover:hover .back {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+}
+
+body {
+
+}
+
+html {
+  margin: auto;
+
+}
+.wavelength {
+  width: 100%;
+  font-size: 12px;
+  padding: 5px 0 5px 10px;
+  background: black;
+  color: white;
+  margin: 510px 0 0 2;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.wavelength > p {
+
+  background: transparent;
+
+}
+
+.new-form {
+  background: #81A8B8;
+  width: 340px;
+  height: 170px;
+}

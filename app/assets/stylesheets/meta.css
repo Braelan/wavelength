@@ -1,0 +1,143 @@
+.Pictures {
+  display: flex;
+  width:100%;
+
+  justify-content: center;
+  flex-flow: wrap;
+  background: orange;
+}
+
+.picture-wrap {
+  position: absolute;
+}
+.reverse{
+  position: absolute;
+  /*background: black;*/
+  background: url(dreamcatcher_welcome.jpg)
+  no-repeat
+  padding-box
+  top center / 1038px ;
+  background-color: rgba(1, 1, 1, 1);
+   /*#DBE6EC;*/
+  width: 100%;
+  height: 692px;
+  color: black;
+  font-size: 20px;
+}
+
+.backlogo {
+  margin: auto;
+  width:500px;
+  height: auto;
+}
+
+.flip {
+  position: relative;
+}
+
+.front {
+  position: absolute;
+  background: blue;
+  width: 170px;
+  height: 170px;
+}
+
+.back {
+  position: absolute;
+  background: red;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  flex-flow:column;
+  justify-content: center;
+}
+
+.Pictures, .reverse {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 1s;
+  transition: transform 1s;
+
+}
+
+.reverse {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(180deg);
+  display: flex;
+}
+
+.reverse-text {
+  margin: auto;
+  text-align: center;
+  font-size: 25px;
+  position: relative;
+}
+
+.welcome {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.welcome2 {
+  font-weight: bold;
+  font-size:30px;
+}
+.cover {
+  position: absolute;
+  background: white;
+  opacity: .9;
+  width: 100%;
+  height:510px;
+  margin: 0 0 0 0;
+}
+
+.cover-change {
+  background: transparent;
+  transition: background 10s;
+}
+.cover > .message-change {
+  top:150px;
+  transition: top 8s, font-size 7s, opacity 7s;
+  font-size: 40px;
+  opacity: .8
+}
+em {
+  font-style: normal;
+  font-weight: bold;
+
+  font-size: 20px;
+  color: black;
+}
+.future {
+  font-size: 20px;
+}
+
+.big-future {
+ font-size: 80px;
+  transition: font-size 14s;
+
+}
+
+
+.we-are {
+  position: relative;
+  text-align: center;
+  top: 200px;
+  font-size: 12px;
+  font-weight:bold;
+  color: #07540A;
+}
+
+.disappear {
+  display: none
+}
+
+.flip.effect_change .Pictures {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.flip.effect_change .reverse {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+}

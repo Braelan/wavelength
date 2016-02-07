@@ -11,12 +11,11 @@ User.create([
    ])
 #
 
-Post.create([{ user_id: 1, front: 'Rastafarian Greetings', back: 'save the cetacians'},
-            { user_id: 2, front: 'Narwhals need Protection', back: 'UNITE'},
-            { user_id: 3, front: 'Copenhaggen', back: 'Meatballs'},
 
-
-  ])
+  40.times do
+    Post.create({user_id: 2, front: 'Narwhals need Protection',
+      front_img: "https://cdn.filepicker.io/api/file/JrFeVPHIQpuxaR02yAoH", back: 'save the cetaceans'})
+  end
  # can create a post with many recipients.  When it is created, multiple recipient
  # objects are also created
 Recipient.create([{post_id: 1, user_id:1},

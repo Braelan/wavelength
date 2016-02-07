@@ -1,10 +1,125 @@
-<h1>check from index.jst.ejs</h1>
 
-  <% posts.forEach(function(post){ %>
-  <%=  post.escape('front') %>
-  <% if (post.escape('front_img') !== ""){ %>
-  <img src= <%= post.escape('front_img') %> />
 
-  <% }}) %>
 
-  <div class="new-form"></div>
+  <link href='https://fonts.googleapis.com/css?family=Raleway|News+Cycle' rel='stylesheet' type='text/css'>
+
+<script src="wavelength.js" type="text/javascript">
+</script>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+
+
+
+  <body>
+
+
+
+<div id="flip" class="flip ">
+   <div class="picture-wrap">
+
+
+        <div class="Pictures">
+
+<div class="new-form"></div>
+
+
+
+
+
+            <% posts.forEach(function(post){ %>
+
+
+
+              <section>
+                <div class="card effect_hover mentee">
+
+                  <div class="front">
+                    <% if (post.escape('front_img') !== ""){ %>
+                    <img src= <%= post.escape('front_img') %> />
+
+                    <% }%>
+
+                  </div>
+
+                  <div class="back ocean">
+                    <p class="backtext">
+                         <%=  post.escape('back') %>
+                    </p>
+                    <button type="button" name="button">meet</button>
+
+                  </div>
+
+                </div>
+                </section>
+
+                      <% }) %>
+
+
+        </div>
+        <div class="wavelength">
+          <p>
+            Made in Bellingham.
+
+            </p>
+          <p>
+            "If we are to have real peace we must begin with the children." -Mahatma Gandhi
+
+          </p>
+          </div>
+
+      </div>  <!-- closes picture wrap  -->
+
+
+    <div class="reverse">
+
+    </div>
+    <div >
+      <img class="backlogo" src="dreamcatcher.png" alt="" />
+    </div>
+
+    <!-- <div class="cover">
+      <p class="we-are">
+        <em class="future">WE ARE THE FUTURE</em> <br>PAVING THE WAY FOR THE NEW GENERATION
+      </p>
+    </div> -->
+
+</div>
+
+
+
+
+</body>
+
+
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".dream").click(function(){
+    $('.flip').toggleClass('effect_change')
+    console.log("I am the click")
+  })
+  $(".becomementor").click(function(){
+    $('.mentee').toggleClass('sort')
+  })
+  setTimeout(function(){
+    $('.cover').toggleClass('cover-change')
+    $('.we-are').toggleClass('message-change')
+  }, 5000)
+  setTimeout(function(){
+    $('em').toggleClass('big-future')
+  }, 1000)
+  setTimeout(function(){
+    $('.cover').toggleClass('disappear')
+  }, 15000)
+})
+$('.card').click(function(){
+alert("Must be signed in.")})
+</script>
+
+</html>

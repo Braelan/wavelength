@@ -9,6 +9,10 @@ DreamCatcher.Views.PostsIndex = Backbone.CompositeView.extend({
   render: function() {
     var view = this.template({posts: this.collection})
     this.$el.html(view)
+    var that = this
+    setTimeout(function(){
+that.addPostForm();
+    }, 1000)
     this.addPostForm();
     return this;
   },

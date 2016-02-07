@@ -3,7 +3,8 @@ DreamCatcher.Views.SignIn = Backbone.View.extend({
   events: {
     "click .sign-out" : "sign_out",
     "click .sign-up" : "sign_up",
-    "click .sign-in" : "sign_in"
+    "click .sign-in" : "sign_in",
+    "click .dream"   : "flip"
   },
 
   initialize: function(options) {
@@ -61,6 +62,11 @@ DreamCatcher.Views.SignIn = Backbone.View.extend({
         that.current_user.fetch();
       }
     })
+  },
+
+  flip: function(){
+      $('.flip').toggleClass('effect_change')
+      console.log("I am the click")
   }
 
 

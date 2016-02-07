@@ -1,9 +1,29 @@
 <% var name = current_user.escape('name') %>
-<% if (name !== 'undefined') { %>
-<%= name %>
-<% if (current_user.escape('image') !== "") { %>
-   <img src= <%= current_user.escape('image') %> />
-<% }} %>
+
+
+<div class="header">
+
+
+
+
+<ul>
+  <li class="dream">dreamcatcher</li>
+  <li><img class="logo" src="dreamcatcher.png" alt="" /></li>
+  <% if (name !== 'undefined') { %>
+  <%= name %>
+  <li><a  href="create.html"><%= name %></a>
+  <% if (current_user.escape('image') !== "") { %>
+     <img class="logo" src= <%= current_user.escape('image') %> />
+  <% }} %>
+  </li>
+  <li>BECOME A MENTEE</li>
+  <li class="becomementor">BECOME A MENTOR</li>
+  <li>LOGIN</li>
+  <li class="search"><input id="search" placeholder="WHAT'S YOUR PASSION?"type="text" name="name" value=""></li>
+  <li class="searchsvg"><img id="searchsvg" src="Search_font_awesome.svg" alt="" /></li>
+</ul>
+
+</div>
 
 <a href="/auth/twitter">Sign in with Twitter</a>
 <form class="sign-up-form" >

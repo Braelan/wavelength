@@ -2,7 +2,7 @@
 from form.jst.ejs
 <form class="new-post" action="index.html" method="post">
   front
-  <input type="textarea" name="post[front]" value="<%= post.escape('front') %>">
+  <input type="textarea" name="post[front]" value="<%= post.escape('front') %>"><br>
   back
   <input type="textarea" name="post[back]" value="<%= post.escape('back') %>">
 
@@ -10,7 +10,7 @@ from form.jst.ejs
 </form>
 
 <form class="upload" action="index.html" method="post">
+front image
 
-<input class="upload" type="filepicker" accept="">
-<input class ="upload" type="submit" name="post[front_img]" value="">upload</input>
+<button class ="upload" type="submit" name="post[front_img]" value="">upload</button>
 </form>

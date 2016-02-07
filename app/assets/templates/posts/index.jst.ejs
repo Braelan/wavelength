@@ -51,8 +51,10 @@
                     <p class="backtext">
                          <%=  post.escape('back') %>
                     </p>
-                    <button type="button" name="button">meet</button>
-
+                    <form class="" action= <%= "/posts/"+ post.escape('id') %> method="get">
+                    <button type="submit" name="button">meet
+                  </button>
+                      </form>
                   </div>
 
                 </div>

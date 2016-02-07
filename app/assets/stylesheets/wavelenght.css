@@ -171,3 +171,12 @@ html {
   width: 340px;
   height: 170px;
 }
+
+.new-post > input {
+  border: 2px solid black;
+}
+
+.upload > input {
+  font-weight: bold;
+  background: purple;
+}

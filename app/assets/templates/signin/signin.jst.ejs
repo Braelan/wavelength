@@ -28,8 +28,11 @@
 <a href="/auth/twitter">Sign in with Twitter</a>
 <form class="sign-up-form" >
   sign up (now in signin.jst.ejs)
+  name
   <input type="text" name="user[name]" value="" placeholder="name">
+  password
   <input type="password" name="user[password]" value="" placeholder="password">
+  password confirmation
   <input type="password" name="user[password_confirmation]" value="" placeholder="password_confirmation">
   <input type="submit" class="sign-up" name="name" value="submit">
 </form>
@@ -41,7 +44,9 @@
 </form>
 
 <form class="sign-in-form" action="/session" method="post">
+  name
   <input type="text" name="user[name]" value="" placeholder="name">
+  password
   <input type="text" name="user[password]" value="" placeholder="password">
   <input type="submit" class="sign-in" name="name" value="Sign in">
 </form>

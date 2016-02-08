@@ -35,10 +35,7 @@ initSearch: function() {
 },
 
 placeMarker: function(that) {
-    // var bounds = new google.maps.LatLngBounds();
-  // map =   new google.maps.Map(document.getElementsByClassName('map')[0], {
-  //  center: {lat: 48.7502, lng: -122.475},
-  //  zoom: 8});
+
   var place = that.getPlaces()[0]
   var name = place.name
   var lati = that.getPlaces()[0].geometry.location.lat()
@@ -57,29 +54,9 @@ placeMarker: function(that) {
     title: name
   });
 
-  // var places = that.getPlaces()
 
-  // markers.forEach(function(marker){ marker.setMap(null)})
-  // var markers = []
-  // places.forEach(function(place) {
-    var icon = {
-      url: place.icon,
-      size: new google.maps.Size(71,71),
-      origin: new google.maps.Point(17, 34),
-      scaledSize: new google.maps.Size(25,24)
-    }
-  //   markers.push(new google.maps.Marker({
-  //     map:map,
-  //     icon: icon,
-  //     title: place.name,
-  //     position: place.geometry.location
-  //   }));
-  //
-  // })
 },
 
-// setMarker: function(marker, map) {
-//   marker.setMap(map)
-// }
+
 
 }

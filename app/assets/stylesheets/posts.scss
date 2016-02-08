@@ -8,13 +8,28 @@
 //   background: blue;
 // }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+}
 .post-show{
   font-size: 60px;
   position: fixed;
-
   margin: auto;
   left: 35%;
   top: 40%;
   background: red;
 
+}
+
+.map {
+  height: 70%;
+  width: 35%
+}
+
+
+.location > input {
+  border-bottom: 4px solid black;
 }

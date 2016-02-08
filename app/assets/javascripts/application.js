@@ -23,3 +23,4 @@
 //= require_tree ./views
 //= require_tree ./collections
 //= require_tree .
+//= require postmap

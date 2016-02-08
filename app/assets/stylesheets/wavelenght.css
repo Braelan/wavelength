@@ -68,9 +68,7 @@ section {
 
 }
 
-.upload{
-  border: 1px solid red;
-}
+
 .card {
   position: relative;
   cursor: pointer;
@@ -106,8 +104,12 @@ img {
 }
 
 .backtext {
+  width: 160px;
+  height : 100px;
   padding: 0 5px 0 5px;
-  text-align: center;
+  overflow: hidden;
+  /*text-align: center;
+  tex*/
 }
 
 .front, .back {
@@ -170,13 +172,43 @@ html {
   background: #81A8B8;
   width: 340px;
   height: 170px;
-}
+  display: flex;
+  text-align: center;
+  font-weight: bold;
 
+}
+.new-post {
+  height: 168px;
+  width: 168px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+.new-post > textarea {
+  height: 100px;
+  width: 162px;
+}
 .new-post > input {
   border: 2px solid black;
+  width: 100px;
+  height: 40px;
 }
 
-.upload > input {
+/*.upload > input {
   font-weight: bold;
   background: purple;
+}*/
+
+.upload-form {
+   height: 168px;
+   width: 168px;
+   border: 1px solid black;
+   display: flex;
+   justify-content: space-around;
+}
+.upload {
+  width: 100px;
+  height: 50px;
+  margin: 50px 0;
+  text-align: center;
 }

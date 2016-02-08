@@ -1,4 +1,4 @@
-console.log("I am the java")
+console.log("I am the java in posts/ wavelength.js")
 
 $('.dream').click(function(){
   $('.flip').toggleClass('effect_change')

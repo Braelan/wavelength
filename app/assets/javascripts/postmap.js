@@ -15,6 +15,8 @@ markers: [],
    title: 'Hello World!'
  });
 
+$('.location').submit(function(event){event.preventDefault()})
+
 
   var searchBox = this.initSearch();
   var that = this
@@ -54,6 +56,14 @@ placeMarker: function(that) {
     title: name
   });
 
+  var id = window.location.pathname.split('/')[2]
+   $.ajax({
+     url: "/api/posts/" + id,
+     type: 'POST',
+     data: {_method: 'PATCH', post: {lat: lati, lng: longi}},
+     success: function(data){debugger},
+     error: function(data){debugger}
+   })
 
 },
 

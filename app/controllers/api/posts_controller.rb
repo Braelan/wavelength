@@ -13,6 +13,11 @@ class Api::PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+    @post.update!(post_params)
+    print "*********************"
+    puts post_params
+    render :show
   end
 
   def destroy
@@ -21,6 +26,7 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params
-      params.require(:post).permit(:front, :back, :front_img)
+      params.require(:post).permit(:front, :lat, :lng, :back, :front_img)
   end
+
 end

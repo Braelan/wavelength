@@ -9,7 +9,7 @@ DreamCatcher.Routers.Router = Backbone.Router.extend({
     this.collection = DreamCatcher.Posts;
     this.current_user = new DreamCatcher.Models.CurrentUser()
     this.current_user.fetch({success: function(data){}})
-    this.listenTo(this.current_user, 'sync', this.sign_in)
+    this.listenTo(this.current_user, 'sync change', this.sign_in)
 
   },
 

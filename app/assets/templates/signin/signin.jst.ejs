@@ -13,40 +13,101 @@
 
   <li><a  href= <%="users/" + user_id %> ><%= name %></a>
   <% if (current_user.escape('image') !== "") { %>
-     <img class="logo" src= <%= current_user.escape('image') %> />
+    <li> <img class="thumbnail" src= <%= current_user.escape('image') %> /></li>
+    <!-- <li><form class="sign-out-form" action="/session" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" class="sign-out" name="name" value="Logout"></input>
+    </form>
+  </li> -->
   <% }} %>
+  <!-- </li> -->
+  <!-- <li>BECOME A MENTEE</li>
+  <li class="becomementor">BECOME A MENTOR</li> -->
+
+<% if (name === 'undefined' || name === "") { %>
+
+  <li>
+    <div class="account-wrap">
+    <div class=" lead">ACCOUNT</div>
+      <div class="sub-wrap">
+
+    <div class="account"><a href="/auth/twitter">Sign in with Twitter</a></div>
+    <div class="account create-account">CREATE ACCOUNT</div>
+    <div class="account sign-in-account">SIGN IN</div>
+      </div>
+  </div>
+
   </li>
-  <li>BECOME A MENTEE</li>
-  <li class="becomementor">BECOME A MENTOR</li>
-  <li>LOGIN</li>
+  <% } else {%>
+    <li>
+
+      <form class="sign-out-form" action="/session" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" class="sign-out" name="name" value="LOGOUT"></input>
+    </form>
+  </li>
+
+    <% } %>
+
+<li class= "search-bar">
   <li class="search"><input id="search" placeholder="WHAT'S YOUR PASSION?"type="text" name="name" value=""></li>
   <li class="searchsvg"><img id="searchsvg" src="Search_font_awesome.svg" alt="" /></li>
+  </li>
 </ul>
 
 </div>
+<br>
+<br>
 
-<a href="/auth/twitter">Sign in with Twitter</a>
-<form class="sign-up-form" >
-  sign up (now in signin.jst.ejs)
+<div class="sign-up-wrap">
+
+
+<div class="sign-wrap">
+  <div class="sign-subwrap">
+
+<div class="sign-back">
+
+</div>
+
+<form class="sign-up-form sign-style" >
+  <div class="close close-style">
+    close
+  </div>
+  <div class="signup-title">
+sign up
+ </div>
+  name
+  <input type="text" name="user[name]" value="" placeholder="name"><br>
+  password
+  <input type="password" name="user[password]" value="" placeholder="password"><br>
+  password confirmation
+  <input type="password" name="user[password_confirmation]" value="" placeholder="password_confirmation"><br>
+  <input type="submit" class="sign-up sign-button" name="name" value="submit">
+</form>
+</div>
+</div>
+</div>
+
+<div class="sign-in-wrap">
+<div class="sign-wrap">
+  <div class="sign-subwrap">
+
+<div class="sign-back">
+
+</div>
+<form class="sign-in-form sign-style" action="/session" method="post">
+  <div class="sign-in-close close-style">
+    close
+  </div>
+  <div class="signup-title">
+sign in
+ </div>
   name
   <input type="text" name="user[name]" value="" placeholder="name">
   password
   <input type="password" name="user[password]" value="" placeholder="password">
-  password confirmation
-  <input type="password" name="user[password_confirmation]" value="" placeholder="password_confirmation">
-  <input type="submit" class="sign-up" name="name" value="submit">
+  <br><input type="submit" class="sign-in sign-button" name="name" value="Sign in">
 </form>
-
-<form class="sign-out-form" action="/session" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" class="sign-out" name="name" value="Logout"></input>
-
-</form>
-
-<form class="sign-in-form" action="/session" method="post">
-  name
-  <input type="text" name="user[name]" value="" placeholder="name">
-  password
-  <input type="text" name="user[password]" value="" placeholder="password">
-  <input type="submit" class="sign-in" name="name" value="Sign in">
-</form>
+</div>
+</div>
+</div>

@@ -13,7 +13,7 @@
 .reverse{
   position: absolute;
   /*background: black;*/
-  background: url(dreamcatcher_welcome.jpg)
+  background: url(asset-path(dreamcatcher_welcome.jpg))
   no-repeat
   padding-box
   top center / 1038px ;

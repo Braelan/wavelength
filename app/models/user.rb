@@ -36,9 +36,11 @@ class User < ActiveRecord::Base
       if @authentication
         @user = @authentication.user
       else
+        name = omniauth['info']['nickname'] || omniauth['info']['name']
+        secret = omniauth['credentials']['secret'] || omniauth['credentials']['token']
         @user = User.create!(
-        name: omniauth['info']['nickname'],
-        password: omniauth['credentials']['secret']
+        name: name,
+        password: secret
         )
       @authentication = Authentication.create_from_omniauth(omniauth, @user)
      end

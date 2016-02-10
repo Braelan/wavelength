@@ -1,6 +1,7 @@
 
 <%= filepicker_js_include_tag %>
 
+
   <!-- can do erb with @user here-->
   <name class="current_user">
 
@@ -16,6 +17,10 @@
   filepicker.setKey("<%= ENV['FILEPICKER_KEY'] %>");
 </script>
 <script type="text/javascript">
+// handles facebook omniauth redirecting to #_=_
+if (window.location.hash.search('#_=_') >= 0){
+  window.location.hash= ''
+}
   $(document).ready(function() {
     DreamCatcher.initialize();
     //

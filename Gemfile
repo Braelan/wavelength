@@ -34,6 +34,7 @@ gem 'backbone-on-rails'
 gem 'figaro'
 
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 gem 'filepicker-rails'
 

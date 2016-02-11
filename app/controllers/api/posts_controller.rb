@@ -1,6 +1,7 @@
 class Api::PostsController < ApplicationController
   def index
     @posts = Post.all
+    @posts = @posts.order('updated_at DESC')
     render "index"
   end
 

@@ -9,8 +9,7 @@ class Api::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user ? current_user.id : 1
     @post.save!
-
-    render :json =>  {:post => 'created a post' }.to_json
+    render :show
   end
 
   def update

@@ -14,6 +14,7 @@ DreamCatcher.Views.PostsIndex = Backbone.CompositeView.extend({
   },
 
   render: function() {
+    this.collection.sort();
     var view = this.template({posts: this.collection, post: this.post})
     this.$el.html(view)
     var that = this
@@ -36,8 +37,11 @@ DreamCatcher.Views.PostsIndex = Backbone.CompositeView.extend({
     this.post.set(attrs.post)
     var that = this;
     this.post.save({},{
-            success:function() {
-        that.collection.add(that.post, {merge:true}   )
+            success:function(data) {
+              debugger
+              that.post.set({'updated_at':  data.escape('updated_at')})
+              that.collection.add(that.post, {merge:true}   )
+              that.render();
       },
           error: function(data) {
             console.log(data)

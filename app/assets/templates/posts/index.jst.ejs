@@ -133,7 +133,22 @@ $(document).ready(function(){
     $('.cover').toggleClass('disappear')
   }, 15000)
 })
-
+var tapped= false
+  $('.Pictures > li').on('touchstart', function(e){
+    if(!tapped){
+      tapped = setTimeout(function(){
+        tapped= null
+      }, 300);
+    } else {
+      clearTimeout(tapped);
+      tapped=null
+      $(".card.effect_hover .front").css("-webkit-transform", "rotateY(-180)")
+      $(".card.effect_hover .front").css("transform", "rotateY(-180)")
+      $(".card.effect_hover .back").css("-webkit-transform", "rotateY(0)")
+      $(".card.effect_hover .back").css("transform", "rotateY(0)")
+    }
+    e.preventDefault()
+  })
   $('#sorts').sortable();
 // $('.card').click(function(){
 // alert("Must be signed in.")})

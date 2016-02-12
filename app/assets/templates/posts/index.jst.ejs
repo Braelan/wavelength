@@ -142,16 +142,17 @@ var tapped= false
     } else {
       clearTimeout(tapped);
       tapped=null
-      $(".card.effect_hover .front").css("-webkit-transform", "rotateY(-180)")
-      $(".card.effect_hover .front").css("transform", "rotateY(-180)")
-      $(".card.effect_hover .back").css("-webkit-transform", "rotateY(0)")
-      $(".card.effect_hover .back").css("transform", "rotateY(0)")
+      this.getElementsByClassName("front").style["-webkit-transform"]= "rotateY(-180)"
+      this.getElementsByClassName("front").style["transform"]= "rotateY(-180)"
+      this.getElementsByClassName("back").style["-webkit-transform"]= "rotateY(0)"
+      this.getElementsByClassName("back").style["-webkit-transform"]= "rotateY(0)"
     }
     e.preventDefault()
   })
   $('#sorts').sortable();
-// $('.card').click(function(){
-// alert("Must be signed in.")})
+$('.card').click(function(){
+  debugger
+alert("Must be signed in.")})
 </script>
 
 </html>

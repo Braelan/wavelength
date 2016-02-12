@@ -11,3 +11,6 @@ console.log("hello from posts.coffee.js")
 #    zoom: 8
 #   });
 # }
+# jQuery ->
+#   debugger
+#   $('#sorts').sortable();

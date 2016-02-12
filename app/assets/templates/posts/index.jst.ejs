@@ -21,7 +21,7 @@
    <div class="picture-wrap">
 
 
-        <div class="Pictures">
+        <ul id="sorts" class="Pictures">
 
 <div class="new-form">
   <form class="upload-form" action="index.html" method="post">
@@ -49,7 +49,7 @@
 
 
 
-              <section>
+              <li id=<%="sort_" + post.escape("id") %> >
                 <div class="card effect_hover mentee">
 
                   <div class="front">
@@ -71,12 +71,12 @@
                   </div>
 
                 </div>
-                </section>
+              </li>
 
                       <% }) %>
 
 
-        </div>
+        </ul>
         <div class="wavelength">
           <p>
             Made in Bellingham.
@@ -133,6 +133,8 @@ $(document).ready(function(){
     $('.cover').toggleClass('disappear')
   }, 15000)
 })
+
+  $('#sorts').sortable();
 // $('.card').click(function(){
 // alert("Must be signed in.")})
 </script>

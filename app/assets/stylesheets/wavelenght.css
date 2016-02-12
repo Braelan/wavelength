@@ -163,6 +163,8 @@ html {
   margin: 510px 0 0 2;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  top: 97%;
 
 }
 

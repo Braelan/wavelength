@@ -10,6 +10,8 @@
 <form class="" action="index.html" method="post">
 Edits
 <input type="button" name="name" value="" style="background: blue;">
+<input type="hidden" id="lng" value="<%= @post.lng %>">
+<input type="hidden" id="lat" value="<%= @post.lat %>">
 </form>
 
 <form class="location" action="index.html" method="post">
@@ -19,6 +21,14 @@ Edits
 <div class="map">
 
 </div>
+
+<form class="" action="/update" method="post">
+  <input type="hidden" name="authenticity_token" value="authenticity_token">
+  <input type="text" name="name" value="<%= @post.front %>"><br>
+  <input type="text" name="name" value="<%= @post.back %>">
+  <input type="submit" name="name" value="">
+
+</form>
 </body>
 
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>

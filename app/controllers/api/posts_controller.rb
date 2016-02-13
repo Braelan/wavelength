@@ -15,8 +15,6 @@ class Api::PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update!(post_params)
-    print "*********************"
-    puts post_params
     render :show
   end
 

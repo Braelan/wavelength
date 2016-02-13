@@ -9,12 +9,13 @@ markers: [],
    zoom: 8
   });
 
+  // var location = this._get_location();
   var marker = new google.maps.Marker({
     map: map,
-   position: {lat: 48.75, lng: -122.475},
+   position: {lat: location[0], lng: location[1]},
    title: 'Hello World!'
  });
-
+// stops normal submit of form to rails
 $('.location').submit(function(event){event.preventDefault()})
 
 
@@ -26,6 +27,17 @@ $('.location').submit(function(event){event.preventDefault()})
 
 
 },
+// _get_location: function() {
+//   if ($('#lat') !== 'undefined') {
+//     var lat = $('#lat').val()
+//     var lng = $('#lng').val()
+//   }else {
+//     var lat = 48.75,
+//     var lng = -122.475
+//   }
+//   var array = [lat,lng];
+//   return array;
+// },
 
 initSearch: function() {
   var defaultBounds = new google.maps.LatLngBounds(
@@ -42,7 +54,6 @@ placeMarker: function(that) {
   var name = place.name
   var lati = that.getPlaces()[0].geometry.location.lat()
   var longi = that.getPlaces()[0].geometry.location.lng()
-
   var icon = {
     url: place.icon,
     size: new google.maps.Size(71,71),
@@ -61,8 +72,8 @@ placeMarker: function(that) {
      url: "/api/posts/" + id,
      type: 'POST',
      data: {_method: 'PATCH', post: {lat: lati, lng: longi}},
-     success: function(data){debugger},
-     error: function(data){debugger}
+     success: function(data){},
+     error: function(data){}
    })
 
 },

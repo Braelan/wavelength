@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
     after_initialize :ensure_session_token
     has_one :xuser
     has_many :authentications
+    has_many :memberships
+    has_many :posts, :through => :memberships
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)

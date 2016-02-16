@@ -16,7 +16,10 @@
 <div class="post-show">
 
 Awesome Content Here <br>
+<form class="" action="/memberships" method="post">
+  <input type="button" name="name" value="Join">
 
+</form>
 <%="post: " + @post.id.to_s %> <br>
 <%= "text: " + @post.back %> <br>
 <a href= <%= @post.id.to_s + "/edit" %> >edit</a>
@@ -37,5 +40,5 @@ Awesome Content Here <br>
     // gMap.initialize();
     gMap.initMap();
   })
-  
+
 </script>

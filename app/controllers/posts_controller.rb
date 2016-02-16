@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(users: [:authentications]).find(params[:id])
 
     render :show
   end
@@ -12,8 +12,5 @@ class PostsController < ApplicationController
 
   def update
   end
-
-
-
 
 end

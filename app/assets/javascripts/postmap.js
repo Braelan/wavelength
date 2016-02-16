@@ -9,7 +9,7 @@ markers: [],
    zoom: 8
   });
 
-  // var location = this._get_location();
+  var location = this._get_location();
   var marker = new google.maps.Marker({
     map: map,
    position: {lat: location[0], lng: location[1]},
@@ -27,17 +27,17 @@ $('.location').submit(function(event){event.preventDefault()})
 
 
 },
-// _get_location: function() {
-//   if ($('#lat') !== 'undefined') {
-//     var lat = $('#lat').val()
-//     var lng = $('#lng').val()
-//   }else {
-//     var lat = 48.75,
-//     var lng = -122.475
-//   }
-//   var array = [lat,lng];
-//   return array;
-// },
+_get_location: function() {
+  if ($('#lat')[0] !== undefined) {
+     var lat = parseFloat($('#lat').val())
+     var lng = parseFloat($('#lng').val())
+  }else {
+     var lat = parseFloat('48.75')
+     var lng = parseFloat('-122.475')
+  }
+  var array = [lat,lng];
+  return array;
+},
 
 initSearch: function() {
   var defaultBounds = new google.maps.LatLngBounds(

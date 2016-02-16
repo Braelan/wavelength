@@ -20,6 +20,10 @@ Awesome Content Here <br>
 <%="post: " + @post.id.to_s %> <br>
 <%= "text: " + @post.back %> <br>
 <a href= <%= @post.id.to_s + "/edit" %> >edit</a>
+
+<input id="lat" type="hidden" value= <%= @post.lat %> >
+<input id="lng" type="hidden" value= <%= @post.lng %>>
+</div>
 </div>
 </div>
 
@@ -33,5 +37,5 @@ Awesome Content Here <br>
     // gMap.initialize();
     gMap.initMap();
   })
-
+  
 </script>

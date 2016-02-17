@@ -24,10 +24,18 @@ Awesome Content Here <br>
   <input type="hidden" name="authenticity_token" value="form_authenticity_token">
   <input type="hidden" name="post_id" value= <%= @post.id %>>
   <input type="submit" name="name" value="Join">
-
 </form>
+
+<form class="" action="/post_upvotes" method="post">
+  <input type="hidden" name="authenticity_token" value="form_authenticity_token">
+  <input type="hidden" name="post_id" value= <%= @post.id %>>
+  <input type="submit" name="name" value="Upvote">
+</form>
+
+
 <%="post: " + @post.id.to_s %> <br>
 <%= "text: " + @post.back %> <br>
+<%= "upvotes: " + @post_upvotes.to_s %> <br>
 
 <a href= <%= @post.id.to_s + "/edit" %> >edit</a>
 

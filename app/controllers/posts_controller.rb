@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def show
-    @post = Post.includes(users: [:authentications]).find(params[:id])
-
+    @post = Post.includes(:post_upvotes, users: [:authentications]).find(params[:id])
+    @post_upvotes = @post.post_upvotes.count
     render :show
   end
 

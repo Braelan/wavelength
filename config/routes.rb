@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:show, :edit, :update]
     resources :users, only: [:show, :edit, :update]
     resources :memberships, only: [:create]
+    resources :post_upvotes, only: [:create]
     get 'auth/:provider/callback', to: 'sessions#create'
   end
   # The priority is based upon order of creation: first created -> highest priority.

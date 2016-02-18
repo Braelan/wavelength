@@ -159,7 +159,10 @@ var tapped= false
     }
     e.preventDefault()
   })
-  $('#sorts').sortable();
+
+  setTimeout(function() {
+      $('#sorts').sortable();
+  }, 50)
 // $('.card').click(function(){
 //   debugger
 // alert("Must be signed in.")})

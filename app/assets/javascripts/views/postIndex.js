@@ -4,7 +4,9 @@ DreamCatcher.Views.PostsIndex = Backbone.CompositeView.extend({
   template: JST['posts/index'],
   events: {
     "submit .new-post" : "submit",
-    "submit .upload-form" : "upload"
+    "submit .upload-form" : "upload",
+    "click .upvotes" : "upvote_sort",
+    "click .recent" : "recent_sort"
   },
 
   initialize: function(options) {
@@ -18,18 +20,8 @@ DreamCatcher.Views.PostsIndex = Backbone.CompositeView.extend({
     var view = this.template({posts: this.collection, post: this.post})
     this.$el.html(view)
     var that = this
-  //   setTimeout(function(){
-  //   that.addPostForm();
-  // }, 1000)
-
     return this;
   },
-
-  // addPostForm: function() {
-  //   // persist model after error here
-  //   var postForm = new DreamCatcher.Views.PostForm({collection: this.collection}).render()
-  //   this.attachSubview('.new-form', postForm)
-  // }
 
   submit: function(event) {
     event.preventDefault();
@@ -56,6 +48,18 @@ DreamCatcher.Views.PostsIndex = Backbone.CompositeView.extend({
       that.post.set({front_img: blob.url})
     })
 
+  },
+
+  upvote_sort: function(event) {
+    this.collection.comparator = function(model) {
+      return - parseInt(model.escape('upvotes'))
+    }
+    this.render();
+  },
+
+  recent_sort: function(event) {
+    this.collection.comparator = this.collection.recent_sort
+    this.render();
   }
 
 

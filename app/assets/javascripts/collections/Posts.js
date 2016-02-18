@@ -11,5 +11,17 @@ DreamCatcher.Collections.Posts = Backbone.Collection.extend({
       return - new Date(date +" "+ time);
 
 
+  },
+
+  recent_sort: function(model) {
+      var string = model.escape('updated_at');
+      var split = string.split('T')
+
+      var time = split[1].slice(0,8);
+      var date = split[0].split('-').join('/')
+      return - new Date(date +" "+ time);
+
+
   }
+
 })

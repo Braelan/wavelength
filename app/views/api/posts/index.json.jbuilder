@@ -4,6 +4,7 @@ json.array! @posts do |post|
   json.front_img  post.front_img
   json.back  post.back
   json.back_img post.back_img
+  json.upvotes post.post_upvotes.count
   json.updated_at post.updated_at
 end
 

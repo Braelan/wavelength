@@ -6,7 +6,8 @@ DreamCatcher.Views.PostsIndex = Backbone.CompositeView.extend({
     "submit .new-post" : "submit",
     "submit .upload-form" : "upload",
     "click .upvotes" : "upvote_sort",
-    "click .recent" : "recent_sort"
+    "click .recent" : "recent_sort",
+    "submit .text-search-form" : "text_search"
   },
 
   initialize: function(options) {
@@ -59,6 +60,14 @@ DreamCatcher.Views.PostsIndex = Backbone.CompositeView.extend({
 
   recent_sort: function(event) {
     this.collection.comparator = this.collection.recent_sort
+    this.render();
+  },
+
+  text_search: function(event) {
+    event.preventDefault();
+    var query = $('.text-search-form').serializeJSON();
+    debugger
+    this.collection.fetch({data: query})
     this.render();
   }
 

@@ -21,8 +21,8 @@ DreamCatcher.Routers.Router = Backbone.Router.extend({
   _swapview: function(view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
-    this.$rootEl.html(view.render().$el)
     this.sign_in();
+    this.$rootEl.html(view.render().$el)
   },
 
   sign_in: function() {

@@ -40,6 +40,7 @@ gem 'omniauth-facebook'
 
 gem 'filepicker-rails'
 
+gem 'pg_search'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

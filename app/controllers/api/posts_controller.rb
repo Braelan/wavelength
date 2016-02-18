@@ -1,7 +1,11 @@
 class Api::PostsController < ApplicationController
   def index
-    @posts = Post.includes(:post_upvotes).all
-    @posts = @posts.order('updated_at DESC')
+    if !params[:post]
+      @posts = Post.includes(:post_upvotes).all
+      @posts = @posts.order('updated_at DESC')
+    else
+      @posts = Post.includes(:post_upvotes).text_search(params[:post][:query])
+    end
     render "index"
   end
 
@@ -24,7 +28,7 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params
-      params.require(:post).permit(:front, :lat, :lng, :back, :front_img)
+      params.require(:post).permit(:front, :lat, :lng, :back, :front_img, :query)
   end
 
 end

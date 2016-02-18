@@ -11,4 +11,5 @@ class Post < ActiveRecord::Base
   def self.text_search(query)
     search(query)
   end
+
 end

@@ -22,7 +22,7 @@
     <input type="text" name="post[query]" value="" placeholder="search">
    <input type="submit" name="name" value="">
   </form>
-
+  locationSearch: <input id="searchTextField" type="text" name="name" value="">
 </div>
 
 
@@ -123,6 +123,7 @@
 
 
 </div>
+
 <script type="text/javascript">
 $(document).ready(function(){
   $(".dream").click(function(){
@@ -159,6 +160,7 @@ var tapped= false
     }
     e.preventDefault()
   })
+
 
   setTimeout(function() {
       $('#sorts').sortable();

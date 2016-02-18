@@ -14,6 +14,8 @@ DreamCatcher.Views.PostsIndex = Backbone.CompositeView.extend({
     this.collection = options.collection
     this.post = new DreamCatcher.Models.Post();
     this.listenTo(this.collection, 'sync add' , this.render)
+    var that = this;
+    gMap.initIndexSearch(this.geo_search, that)
   },
 
   render: function() {
@@ -66,10 +68,19 @@ DreamCatcher.Views.PostsIndex = Backbone.CompositeView.extend({
   text_search: function(event) {
     event.preventDefault();
     var query = $('.text-search-form').serializeJSON();
-    debugger
     this.collection.fetch({data: query})
     this.render();
-  }
+  },
+
+  geo_search: function(){
+    window.indexLat = this.getPlaces()[0].geometry.location.lat()
+    window.indexLng = this.getPlaces()[0].geometry.location.lat()
+    // DreamCatcher.PostsIndex.renderIndexSearch(lat, lng)
+  },
+
+  // renderIndexSearch: function(lat, lng){
+  //   debugger
+  // }.bind(this.scope())
 
 
 

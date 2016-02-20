@@ -5,14 +5,22 @@
     <title></title>
   </head>
   <body>
-
-
+<% if @post.front %>
+<h1><%= @post.front %> </h1>
+<% end %>
 <div class="map">
 
 </div>
 <div class="post-show-wrap">
 
+<% if @post.video %>
+<%= @post.video.html_safe %>
+<% end %>
 
+
+<% if @post.slide %>
+<%= @post.slide.html_safe %>
+<% end %>
 <div class="post-show">
 
 Awesome Content Here <br>
@@ -97,8 +105,8 @@ Awesome Content Here <br>
 
 
 
-
-
+<br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 

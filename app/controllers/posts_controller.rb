@@ -11,6 +11,12 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+    @post.update!(post_params)
+    render :show
   end
 
+  def post_params
+    params.require(:post).permit(:front, :back, :slide, :video)
+  end
 end

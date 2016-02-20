@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
     resource :session, only: [:create, :destroy, :show]
     resource :xusers, only: [:create]
-    resources :posts, only: [:show, :edit, :update]
+    resources :posts
     resources :users, only: [:show, :edit, :update]
     resources :memberships, only: [:create]
     resources :post_upvotes, only: [:create]

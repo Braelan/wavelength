@@ -1,0 +1,40 @@
+# this code can be placed into the post show as a div
+
+<div class="wrap-wrap">
+<div class="picture-wrap">
+
+
+     <ul id="sorts" class="Pictures">
+        <% @members.each do |user| %>
+
+
+
+           <li id=<%= "sort_" + @post.id.to_s %> >
+             <div class="card effect_hover mentee">
+
+               <div class="front">
+        <% if user.authentications[0].image %>
+                  <img src= <%= user.authentications[0].image %> alt="" />
+        <% end %>
+
+               </div>
+
+               <div class="back ocean">
+                 <p class="backtext">
+                    <%= user.name %>
+                 </p>
+                 <form class="" action= <%= "/users/"+ user.id.to_s %> method="get">
+                 <button type="submit" name="button">meet
+               </button>
+                   </form>
+               </div>
+
+             </div>
+           </li>
+
+          <% end %>
+     </ul>
+
+        </div>  <!-- closes picture wrap  -->
+
+      </div> <!-- closes wrap-wrap -->

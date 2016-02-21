@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     resources :memberships, only: [:create]
     resources :post_upvotes, only: [:create]
     get 'auth/:provider/callback', to: 'sessions#create'
+    namespace :posts do
+      scope ":id" do
+        resources :members, only: [:index]
+      end
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

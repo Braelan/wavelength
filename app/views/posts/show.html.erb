@@ -11,7 +11,9 @@
 
 <div class="media-wrap">
 
-  <img class="title-image" src="http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/H-P/narwhal_tooth.jpg" alt="" />
+  <% if @post.image %>
+  <img class="title-image" src="<%= @post.image %>" alt="" />
+  <% end %>
 
   <div class="map">
   </div>
@@ -23,19 +25,28 @@
 
     Despite the decreases in sea ice cover, there were several large cases of sea ice entrapment in 2008–2010 in the winter close to known summering grounds, two of which were locations where there had been no previous cases documented.[33] This suggests later departure dates from summering grounds. Sites surrounding Greenland experience advection (moving) of sea ice from surrounding regions by wind and currents, increasing the variability of sea ice concentration. Due to strong site fidelity, changes in weather and ice conditions are not always associated with narwhal movement toward open water and therefore more data is needed to determine how vulnerable narwhals are to future sea ice changes. Narwhals can also die of starvation, especially the young.
   </div>
+    <% if @post.video %>
   <div class="video">
-  <% if @post.video %>
+
   <%= @post.video.html_safe %>
-  <% end %>
-  </div>
 
-  <div class="slides">
+  </div>
+  <% end %>
+
   <% if @post.slide %>
+  <div class="slides">
   <%= @post.slide.html_safe %>
-  <% end %>
   </div>
-
-  
+  <% end %>
+<% @post.pdfs.each do |pdf| %>
+  <div class="pdf">
+    <a href= <%= "/pdf/1/?file=" + pdf.link %> > <%= pdf.title %> </a>
+    <br>
+    <br><br>
+    <br>
+    <br><br>
+  </div>
+<%  end %>
 </div>
 
 <div class="post-show-wrap">

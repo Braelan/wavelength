@@ -18,6 +18,8 @@ Rails.application.routes.draw do
         resources :members, only: [:index]
       end
     end
+    resources :pdf, only: [:show]
+
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

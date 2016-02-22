@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220031944) do
+ActiveRecord::Schema.define(version: 20160222005058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 20160220031944) do
   add_index "memberships", ["post_id"], name: "index_memberships_on_post_id", using: :btree
   add_index "memberships", ["user_id"], name: "index_memberships_on_user_id", using: :btree
 
+  create_table "pdfs", force: :cascade do |t|
+    t.integer  "post_id"
+    t.string   "link",                       null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "title",      default: "pdf", null: false
+  end
+
+  add_index "pdfs", ["post_id"], name: "index_pdfs_on_post_id", using: :btree
+
   create_table "post_upvotes", force: :cascade do |t|
     t.integer  "user_id",    null: false
     t.integer  "post_id",    null: false
@@ -59,6 +69,7 @@ ActiveRecord::Schema.define(version: 20160220031944) do
     t.decimal  "lng"
     t.string   "slide"
     t.string   "video"
+    t.string   "image"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree

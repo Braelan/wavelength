@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:front, :back, :slide, :video, :image)
+    params.require(:post).permit(:front, :back, :slide, :video, :image, :info)
   end
 
 def pdf_params

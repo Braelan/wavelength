@@ -145,18 +145,30 @@ $(document).ready(function(){
   }, 15000)
 })
 var tapped= false
+var flipped = false
   $('.Pictures > li').on('touchstart', function(e){
     if(!tapped){
       tapped = setTimeout(function(){
         tapped= null
       }, 300);
-    } else {
+    } else if (flipped == true){
+      clearTimeout(tapped);
+      debugger
+      this.getElementsByClassName("front")[0].style["-webkit-transform"]= ""
+      this.getElementsByClassName("front")[0].style["transform"]= ""
+      this.getElementsByClassName("back")[0].style["-webkit-transform"]= ""
+      this.getElementsByClassName("back")[0].style["-webkit-transform"]= ""
+      flipped = false;
+    }
+      else {
+        debugger
       clearTimeout(tapped);
       tapped=null
       this.getElementsByClassName("front")[0].style["-webkit-transform"]= "rotateY(-180)"
       this.getElementsByClassName("front")[0].style["transform"]= "rotateY(-180)"
       this.getElementsByClassName("back")[0].style["-webkit-transform"]= "rotateY(0)"
       this.getElementsByClassName("back")[0].style["-webkit-transform"]= "rotateY(0)"
+      flipped = true
     }
     e.preventDefault()
   })

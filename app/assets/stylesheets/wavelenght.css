@@ -63,23 +63,47 @@ button:active {
 .options {
   display: flex;
   flex-direction: row;
-  background: red;
+  background: transparent;
   margin: 0 10%;
   font-family: Roboto;
   font-size: 25px;
   font-weight: bold;
   color: black;
 }
-.text-search-form > input::-webkit-input-placeholder {
-  color: black;
-} {
-  color: black;
+.upvotes, .recent {
+  border-top: 1px solid black;
 }
+.upvotes:hover, .recent:hover {
+  cursor: pointer;
+}
+.upvotes {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+.recent {
+  border-right: 1px solid black;
+}
+.search-input::-webkit-input-placeholder {
+  color: white;
+
+}
+.search-input::-moz-placeholder {
+  color: white;
+}
+.search-input {
+  background: #D10000;
+}
+
+#search-pad {
+  padding: 3px 10px;
+}
+
 .options > * {
   padding: 0 10px;
 }
 .text-search {
-  background: blue;
+  margin: 0 0 0 20%;
+  background: transparent;
   padding: 0 10px;
 }
 

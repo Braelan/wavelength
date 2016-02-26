@@ -60,6 +60,30 @@ button:active {
 
 }
 
+.options {
+  display: flex;
+  flex-direction: row;
+  background: red;
+  margin: 0 10%;
+  font-family: Roboto;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+.text-search-form > input::-webkit-input-placeholder {
+  color: black;
+} {
+  color: black;
+}
+.options > * {
+  padding: 0 10px;
+}
+.text-search {
+  background: blue;
+  padding: 0 10px;
+}
+
+
 .Pictures > li {
    display: block;
    position:static;

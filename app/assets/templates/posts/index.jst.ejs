@@ -153,7 +153,6 @@ var flipped = false
       }, 300);
     } else if (flipped == true){
       clearTimeout(tapped);
-      debugger
       this.getElementsByClassName("front")[0].style["-webkit-transform"]= ""
       this.getElementsByClassName("front")[0].style["transform"]= ""
       this.getElementsByClassName("back")[0].style["-webkit-transform"]= ""
@@ -161,7 +160,6 @@ var flipped = false
       flipped = false;
     }
       else {
-        debugger
       clearTimeout(tapped);
       tapped=null
       this.getElementsByClassName("front")[0].style["-webkit-transform"]= "rotateY(-180)"

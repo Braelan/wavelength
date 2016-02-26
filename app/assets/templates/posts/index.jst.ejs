@@ -153,10 +153,10 @@ var tapped= false
     } else {
       clearTimeout(tapped);
       tapped=null
-      this.getElementsByClassName("front").style["-webkit-transform"]= "rotateY(-180)"
-      this.getElementsByClassName("front").style["transform"]= "rotateY(-180)"
-      this.getElementsByClassName("back").style["-webkit-transform"]= "rotateY(0)"
-      this.getElementsByClassName("back").style["-webkit-transform"]= "rotateY(0)"
+      this.getElementsByClassName("front")[0].style["-webkit-transform"]= "rotateY(-180)"
+      this.getElementsByClassName("front")[0].style["transform"]= "rotateY(-180)"
+      this.getElementsByClassName("back")[0].style["-webkit-transform"]= "rotateY(0)"
+      this.getElementsByClassName("back")[0].style["-webkit-transform"]= "rotateY(0)"
     }
     e.preventDefault()
   })

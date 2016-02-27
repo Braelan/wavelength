@@ -5,7 +5,7 @@ class MembershipsController < ApplicationController
       redirect_to :back, flash: {error: "Already a member of this collective"}
     elsif @current_user
       Membership.create!(user_id: @current_user.id, post_id: params[:post_id] )
-      redirect_to :back
+      redirect_to "/posts/" + params[:post_id].to_s + "/members"
     else
       redirect_to :back, flash: {error: "Must be signed in to join collective."}
     end

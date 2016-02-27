@@ -60,14 +60,14 @@
 <form class="" action="/memberships" method="post">
   <input type="hidden" name="authenticity_token" value="form_authenticity_token">
   <input type="hidden" name="post_id" value= <%= @post.id %>>
-  <input type="submit" name="name" value="Join">
+<a>  <input type="submit" name="name" value="Join"> </a>
 </form>
 <a href= <%= @post.id.to_s + "/members" %> >Members</a>
 
 <form class="" action="/post_upvotes" method="post">
   <input type="hidden" name="authenticity_token" value="form_authenticity_token">
   <input type="hidden" name="post_id" value= <%= @post.id %>>
-  <input type="submit" name="name" value="Upvote">
+  <a> <input type="submit" name="name" value="Upvote"> </a>
 </form>
 
 

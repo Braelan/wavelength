@@ -15,6 +15,9 @@ html, body {
   padding: 0;
   // font-size: 30px;
 }
+a > input{
+  cursor: pointer;
+}
 .media-wrap {
   height: 100%;
   width: 100%;

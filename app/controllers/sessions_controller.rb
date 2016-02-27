@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   before_action :require_signed_in!, only: [:destroy]
 
   def create
+        #  raise env['omniauth.auth'].to_yaml
     @user = omni_or_native
 
     if @user

@@ -37,6 +37,7 @@ gem 'figaro'
 
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
 
 gem 'filepicker-rails'
 

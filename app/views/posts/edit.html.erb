@@ -11,7 +11,7 @@
 
 
 <div class="map-wrap">
-    <form class="" action="index.html" method="post">
+    <form class="location" action="index.html" method="post">
     Edits
     <input type="button" name="name" value="" style="background: blue;">
     <input type="hidden" id="lng" value="<%= @post.lng %>">
@@ -22,7 +22,7 @@
       Location:
       <input id="searchTextField" type="text" name="name" value="">
     </form>
-    <div class="map">
+    <div class="map" id="edit-map">
 
     </div>
   </div>

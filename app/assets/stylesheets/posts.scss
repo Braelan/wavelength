@@ -37,13 +37,16 @@ a > input{
   height: 100%;
   width: 100%;
 }
-.map {
+.map-wrap > #edit-map {
   height: 600px;
   width: 500px;
   margin: auto
-
 }
 
+.map {
+  height: 100%;
+  width: 35%;
+}
 .location {
   margin: auto;
   text-align: center;
@@ -83,7 +86,7 @@ a > input{
 .cover-wrap {
   width: 100%;
   height: 100%;
-  margin: auto;
+    margin: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

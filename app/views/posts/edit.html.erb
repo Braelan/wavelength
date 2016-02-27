@@ -1,55 +1,64 @@
 <!DOCTYPE html>
+  <link href='https://fonts.googleapis.com/css?family=Raleway|News+Cycle' rel='stylesheet' type='text/css'>
+
 <html>
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
+  <div class="cover-wrap">
 
 
-<form class="" action="index.html" method="post">
-Edits
-<input type="button" name="name" value="" style="background: blue;">
-<input type="hidden" id="lng" value="<%= @post.lng %>">
-<input type="hidden" id="lat" value="<%= @post.lat %>">
-</form>
+<div class="map-wrap">
+    <form class="" action="index.html" method="post">
+    Edits
+    <input type="button" name="name" value="" style="background: blue;">
+    <input type="hidden" id="lng" value="<%= @post.lng %>">
+    <input type="hidden" id="lat" value="<%= @post.lat %>">
+    </form>
 
-<form class="location" action="index.html" method="post">
-  Location:
-  <input id="searchTextField" type="text" name="name" value="">
-</form>
-<div class="map">
+    <form class="location" action="index.html" method="post">
+      Location:
+      <input id="searchTextField" type="text" name="name" value="">
+    </form>
+    <div class="map">
+
+    </div>
+  </div>
+
+
+  <div class="form-wrap">
+
+
+    <form class="edit-form" action=" <%= '/posts/' + @post.id.to_s %>" method="POST">
+      <input type="hidden" name="_method" value="patch">
+      <input type="hidden" name="authenticity_token" value="authenticity_token">
+      Title:
+      <input type="text" name="post[front]" value="<%= @post.front %>">
+      Card Back:
+      <input type="text" name="post[back]" value="<%= @post.back %>">
+      SlideShare iframe:
+      <input type="text" name="post[slide]" value="<%=@post.slide %>" placeholder='ie. <iframe src="//www.slideshare.net/slideshow/embed_code/key/IHhRI22W6ZhOyI" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/trinityblu/narwhal" title="Narwhal" target="_blank">Narwhal</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/trinityblu">Trinity Blu*** Don&#x27;t Thank Me for Viewing Shows....but Rather, Pay It Forward :))*** </a></strong> </div>'>
+      Video (youtube) iframe:
+      <input type="text" name="post[video]" value="<%= @post.video %>" placeholder= 'ie. <iframe width="854" height="480" src="https://www.youtube.com/embed/FK-vvDAIG9g" frameborder="0" allowfullscreen></iframe>'>
+      front Image url:
+      <input type="text" name="post[image]" value="<%= @post.image %>" placeholder="http://">
+      Info
+      <textarea name="post[info]" rows="30" cols="40" value= "<%= @post.info %>"></textarea>
+      New Pdf attachment
+      <input type="text" name="post[pdf_link]" value= "" placeholder="http://">
+      pdf title
+      <input type="text" name="post[pdf_title]" value= "" >
+
+      <br>
+
+      <input class="form-entry" type="submit" name="name" value="Save">
+
+    </form>
+  </div>
 
 </div>
- post/' + @post.id.to_s
-<form class="" action=" <%= '/posts/' + @post.id.to_s %>" method="POST">
-  <input type="hidden" name="_method" value="patch">
-  <input type="hidden" name="authenticity_token" value="authenticity_token">
-  Title:
-  <input type="text" name="post[front]" value="<%= @post.front %>"><br>
-  Card Back:
-  <input type="text" name="post[back]" value="<%= @post.back %>">
-  SlideShare iframe:
-  <input type="text" name="post[slide]" value="<%=@post.slide %>">
-  Video (youtube) iframe:
-  <input type="text" name="post[video]" value="<%= @post.video %>">
-  frontImage
-  <input type="text" name="post[image]" value="<%= @post.image %>">
-  Info
-  <textarea name="post[info]" rows="40" cols="40" value= "<%= @post.info %>"></textarea>
-
-
-  New Pdf attachment
-  pdf link
-  <input type="text" name="post[pdf_link]" value= "" >
-  pdf title
-  <input type="text" name="post[pdf_title]" value= "" >
-
-  <br>
-
-  <input type="submit" name="name" value="Save">
-
-</form>
 </body>
 
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>

@@ -70,6 +70,7 @@ button:active {
   font-size: 25px;
   font-weight: bold;
   color: black;
+  width: 90%;
 }
 .upvotes, .recent {
   border-top: 1px solid black;
@@ -89,10 +90,10 @@ button:active {
 .search-wrap {
   display: flex;
   flex-direction:row;
-  width: 30%
 }
 .search-wrap > * {
   height: 30px;
+
 }
 
 .search-input::-webkit-input-placeholder {
@@ -103,8 +104,10 @@ button:active {
   color: white;
 }
 .search-input {
+  display: block;
   background: #D10000;
   padding: 3px 10px;
+  width: 180px;
 }
 
 #search-pad {
@@ -115,7 +118,6 @@ button:active {
   padding: 0 10px;
 }
 .text-search {
-  margin: 0 0 0 4%;
   background: transparent;
   padding: 0 10px;
 }

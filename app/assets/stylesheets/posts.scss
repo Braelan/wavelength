@@ -43,6 +43,11 @@ a > input{
   margin: auto
 }
 
+textarea {
+  font-size: 13px;
+  font-family: Raleway;
+}
+
 .map {
   height: 100%;
   width: 35%;
@@ -105,7 +110,7 @@ a > input{
   flex-direction: column;
   margin: 30px 0;
   width: 48%;
-  background: white;
+  background: #DBE6EC;
   border: 1px solid black;
   border-radius: 5px;
 }
@@ -118,6 +123,7 @@ a > input{
 .edit-form > input {
   border: 1px solid black;
   border-radius: 5px;
+  background: white;
 }
 
 .edit-form > input::-webkit-input-placeholder {

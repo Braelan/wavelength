@@ -4,8 +4,9 @@ map: null,
 markers: [],
 
  initMap: function() {
+   var location = this._get_location()
   map =   new google.maps.Map(document.getElementsByClassName('map')[0], {
-   center: {lat: 48.7502, lng: -122.475},
+   center: {lat: location[0], lng: location[1]},
    zoom: 8
   });
 
